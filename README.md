@@ -55,7 +55,7 @@ The gas information is a work in progress. If an asterisk is in the Gas column, 
 | `0x3c` | EXTCODECOPY | Copy an account's code to memory | - | 700* |
 | `0x3d` | RETURNDATASIZE | Pushes the size of the return data buffer onto the stack | [EIP 211](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-211.md) | 2 |
 | `0x3e` | RETURNDATACOPY | Copies data from the return data buffer to memory | [EIP 211](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-211.md) | 3 |
-| `0x3f` | Unused | - |
+| `0x3f` | EXTCODEHASH | Get keccak256 hash of a contract's code | [EIP 1052](https://eips.ethereum.org/EIPS/eip-1052) | 400 |
 | `0x40` | BLOCKHASH | Get the hash of one of the 256 most recent complete blocks | - | 20 |
 | `0x41` | COINBASE | Get the block's beneficiary address | - | 2 |
 | `0x42` | TIMESTAMP | Get the block's timestamp | - | 2 |
