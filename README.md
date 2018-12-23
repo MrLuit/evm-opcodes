@@ -26,7 +26,6 @@ The gas information is a work in progress. If an asterisk is in the Gas column, 
 | `0x09` | MULMOD | Modulo multiplication operation | - | 8 |
 | `0x0a` | EXP | Exponential operation | - | 10* |
 | `0x0b` | SIGNEXTEND | Extend length of two's complement signed integer | - | 5 |
-| `0x0c` - `0x0f` | Unused | Unused | - |
 | `0x10` | LT | Less-than comparison | - | 3 |
 | `0x11` | GT | Greater-than comparison | - | 3 |
 | `0x12` | SLT | Signed less-than comparison | - | 3 |
@@ -42,7 +41,6 @@ The gas information is a work in progress. If an asterisk is in the Gas column, 
 | `0x1c` | SHR | Logical shift right | [EIP 145](https://eips.ethereum.org/EIPS/eip-145) | 3 |
 | `0x1d` | SAR | Arithmetic shift right | [EIP 145](https://eips.ethereum.org/EIPS/eip-145) | 3 |
 | `0x20` | SHA3 | Compute Keccak-256 hash | - | 30* |
-| `0x21` - `0x2f`| Unused | Unused |
 | `0x30` | ADDRESS | Get address of currently executing account | - | 2 |
 | `0x31` | BALANCE | Get balance of the given account | - | 400 |
 | `0x32` | ORIGIN | Get execution origination address | - | 2 |
@@ -65,7 +63,6 @@ The gas information is a work in progress. If an asterisk is in the Gas column, 
 | `0x43` | NUMBER | Get the block's number | - | 2 |
 | `0x44` | DIFFICULTY | Get the block's difficulty | - | 2 |
 | `0x45` | GASLIMIT | Get the block's gas limit | - | 2 |
-| `0x46` - `0x4f` | Unused | - |
 | `0x50` | POP | Remove word from stack | - | 2 |
 | `0x51` | MLOAD | Load word from memory | - | 3* |
 | `0x52` | MSTORE | Save word to memory | - | 3* |
@@ -78,7 +75,6 @@ The gas information is a work in progress. If an asterisk is in the Gas column, 
 | `0x59` | MSIZE | Get the size of active memory in bytes | - | 2 |
 | `0x5a` | GAS | Get the amount of available gas, including the corresponding reduction the amount of available gas | - | 2 |
 | `0x5b` | JUMPDEST | Mark a valid destination for jumps | - | 1 |
-| `0x5c` - `0x5f` | Unused | - |
 | `0x60` | PUSH1 | Place 1 byte item on stack | - | 3 |
 | `0x61` | PUSH2 | Place 2-byte item on stack | - | 3 |
 | `0x62` | PUSH3 | Place 3-byte item on stack | - | 3 |
@@ -148,28 +144,12 @@ The gas information is a work in progress. If an asterisk is in the Gas column, 
 | `0xa2` | LOG2 | Append log record with two topics | - | 1125 |
 | `0xa3` | LOG3 | Append log record with three topics | - | 1500 |
 | `0xa4` | LOG4 | Append log record with four topics | - | 1875 |
-| `0xa5` - `0xaf` | Unused | - |
-| `0xb0` | JUMPTO | Tentative [libevmasm has different numbers](https://github.com/ethereum/solidity/blob/c61610302aa2bfa029715b534719d25fe3949059/libevmasm/Instruction.h#L176)| [EIP 615](https://github.com/ethereum/EIPs/blob/606405b5ab7aa28d8191958504e8aad4649666c9/EIPS/eip-615.md) |
-| `0xb1` | JUMPIF | Tentative | [EIP 615](https://github.com/ethereum/EIPs/blob/606405b5ab7aa28d8191958504e8aad4649666c9/EIPS/eip-615.md) |
-| `0xb2` | JUMPSUB | Tentative | [EIP 615](https://github.com/ethereum/EIPs/blob/606405b5ab7aa28d8191958504e8aad4649666c9/EIPS/eip-615.md) |
-| `0xb4` | JUMPSUBV | Tentative | [EIP 615](https://github.com/ethereum/EIPs/blob/606405b5ab7aa28d8191958504e8aad4649666c9/EIPS/eip-615.md) |
-| `0xb5` | BEGINSUB | Tentative | [EIP 615](https://github.com/ethereum/EIPs/blob/606405b5ab7aa28d8191958504e8aad4649666c9/EIPS/eip-615.md) |
-| `0xb6` | BEGINDATA | Tentative | [EIP 615](https://github.com/ethereum/EIPs/blob/606405b5ab7aa28d8191958504e8aad4649666c9/EIPS/eip-615.md) |
-| `0xb8` | RETURNSUB | Tentative | [EIP 615](https://github.com/ethereum/EIPs/blob/606405b5ab7aa28d8191958504e8aad4649666c9/EIPS/eip-615.md) |
-| `0xb9` | PUTLOCAL | Tentative | [EIP 615](https://github.com/ethereum/EIPs/blob/606405b5ab7aa28d8191958504e8aad4649666c9/EIPS/eip-615.md) |
-| `0xba` | GETLOCAL | Tentative | [EIP 615](https://github.com/ethereum/EIPs/blob/606405b5ab7aa28d8191958504e8aad4649666c9/EIPS/eip-615.md) |
-| `0xbb` - `0xe0` | Unused | - |
-| `0xe1` | SLOADBYTES | Only referenced in pyethereum | - | - |
-| `0xe2` | SSTOREBYTES | Only referenced in pyethereum | - | - |
-| `0xe3` | SSIZE | Only referenced in pyethereum | - | - |
-| `0xe4` - `0xef` | Unused | - |
 | `0xf0` | CREATE | Create a new account with associated code | - | 32000 |
 | `0xf1` | CALL | Message-call into an account | - | Complicated |
 | `0xf2` | CALLCODE | Message-call into this account with alternative account's code | - | Complicated |
 | `0xf3` | RETURN | Halt execution returning output data | - | 0 |
 | `0xf4` | DELEGATECALL | Message-call into this account with an alternative account's code, but persisting into this account with an alternative account's code | - | Complicated |
 | `0xf5` | CREATE2 | Create a new account and set creation address to `keccak256( 0xff ++ address ++ salt ++ keccak256(init_code)))[12:]` | [EIP 1014](https://eips.ethereum.org/EIPS/eip-1014) | 32000 + GSHA3WORD * ceil(len(init_code) / 32) |
-| `0xf6` - `0xf9` | Unused | - | - |
 | `0xfa` | STATICCALL | Similar to CALL, but does not modify state | - | 40 |
 | `0xfd` | REVERT | Stop execution and revert state changes, without consuming all provided gas and providing a reason | - | 0 |
 | `0xfe` | INVALID | Designated invalid instruction | - | 0 |
