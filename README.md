@@ -168,11 +168,9 @@ The gas information is a work in progress. If an asterisk is in the Gas column, 
 | `0xf2` | CALLCODE | Message-call into this account with alternative account's code | - | Complicated |
 | `0xf3` | RETURN | Halt execution returning output data | - | 0 |
 | `0xf4` | DELEGATECALL | Message-call into this account with an alternative account's code, but persisting into this account with an alternative account's code | - | Complicated |
-| `0xf5` | CALLBLACKBOX | - | - | | 40 | 
+| `0xf5` | CREATE2 | Create a new account and set creation address to `keccak256( 0xff ++ address ++ salt ++ keccak256(init_code)))[12:]` | [EIP 1014](https://eips.ethereum.org/EIPS/eip-1014) | 32000 + GSHA3WORD * ceil(len(init_code) / 32) |
 | `0xf6` - `0xf9` | Unused | - | - |
 | `0xfa` | STATICCALL | Similar to CALL, but does not modify state | - | 40 |
-| `0xfb` | CREATE2 | Create a new account and set creation address to `sha3(sender + sha3(init code)) % 2**160` | - |
-| `0xfc` | TXEXECGAS | Not in yellow paper FIXME | - | - |
 | `0xfd` | REVERT | Stop execution and revert state changes, without consuming all provided gas and providing a reason | - | 0 |
 | `0xfe` | INVALID | Designated invalid instruction | - | 0 |
 | `0xff` | SELFDESTRUCT | Halt execution and register account for later deletion | - | 5000* | 
