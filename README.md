@@ -38,6 +38,9 @@ The gas information is a work in progress. If an asterisk is in the Gas column, 
 | `0x18` | XOR | Bitwise XOR operation | - | 3 |
 | `0x19` | NOT | Bitwise NOT operation | - | 3 |
 | `0x1a` | BYTE | Retrieve single byte from word | - | 3 |
+| `0x1b` | SHL | Shift left | [EIP 145](https://eips.ethereum.org/EIPS/eip-145) | 3 |
+| `0x1c` | SHR | Logical shift right | [EIP 145](https://eips.ethereum.org/EIPS/eip-145) | 3 |
+| `0x1d` | SAR | Arithmetic shift right | [EIP 145](https://eips.ethereum.org/EIPS/eip-145) | 3 |
 | `0x20` | SHA3 | Compute Keccak-256 hash | - | 30* |
 | `0x21` - `0x2f`| Unused | Unused |
 | `0x30` | ADDRESS | Get address of currently executing account | - | 2 |
